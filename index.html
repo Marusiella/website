@@ -53,6 +53,13 @@
               <input class="form-control form-control-sm" type="text" placeholder="Liczba całkowita - DO (włącznie z nią)" id="inputSmall2">
             </div>
                 <button onclick="losuj()" type="button" class="btn btn-secondary">W Y L O S U J</button>
+            <script>
+                                function losuj() {
+                    min = Math.ceil(document.getElementById("inputSmall1").value);
+                    max = Math.floor(document.getElementById("inputSmall2").value);
+                    document.getElementById("number").innerHTML = Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+            </script>
         </div>
 
         <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
@@ -93,24 +100,15 @@
             <button onclick=" github()" type="button" class="btn btn-dark btn-lg"><i class="bi-github"></i>
                 GitHub</button>
             <script>
-                function losuj() {
-                    var of = document.getElementById("inputSmall1").value;
-                    var to = document.getElementById("inputSmall2").value;
-
-                    min = Math.ceil(of);
-                    max = Math.floor(to);
-                    document.getElementById("number").innerHTML = Math.floor(Math.random() * (max - min + 1)) + min;
-                }
-
-                function youtube() {
+                                function youtube() {
                     location.href = "https://www.youtube.com/channel/UCMoHVlWVS_C8TpMf-bp0f2g";
                 }
 
-                function discord() {
+                                function discord() {
                     location.href = "https://pastebin.com/raw/umrkx0ay";
                 }
 
-                function github() {
+                                function github() {
                     location.href = "https://github.com/mezess";
                 }
             </script>
