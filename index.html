@@ -34,42 +34,41 @@
     <center>
         <h1>🎲 Mezess</h1>
         <h6>Mausaa, Nero, Neo🎓</h6>
+        <br/>
 
-        <h6></h6>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/orkkk.jpg" alt="Card image cap">
+        <div class="card text-white bg-primary mb-3" style="max-width: 20rem;">
+            <div class="card-header">Informacja</div>
             <div class="card-body">
-                <h5 class="card-title">Unikalny pseudo orkkk</h5>
-                <p class="card-text">Ma bardzo rozpoznawalną barwę głosu, którą się posługuje. Posiada bardzo dobrej
-                    jakości mikrofon, lecz jego głos nadal pozostawia wiele do życzenia. Lubi grać w gry, często osiąga
-                    w nich zadowalające wyniki. Jest szybki i ciężko go znaleźć, aczkolwiek można go szukać w poniższych
-                    odniesieniach.</p>
-                <a href="https://discord.gg/CsqbhCE9nb" class="btn btn-primary">Discord</a>
-                <a href="https://www.twitch.tv/glutentodobro" class="btn btn-primary">Twitch</a>
+              <h4 class="card-title">Strona 🌐</h4>
+              <p class="card-text">umożliwia losowanie liczb całkowitych z praktycznie dowolnego zakresu...</p>
+            </div>
+          </div>
+
+        <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+            <div class="card-header">Parametry 🛠️</div>
+            <div class="card-body">
+              <h4 class="card-title">Wprowadź poniżej:</h4>
+              <input class="form-control form-control-sm" type="text" placeholder="Liczba całkowita - OD (włącznie z nią)" id="inputSmall1">
+              <hr />
+              <input class="form-control form-control-sm" type="text" placeholder="Liczba całkowita - DO (włącznie z nią)" id="inputSmall2">
+            </div>
+                <button onclick="losuj()" type="button" class="btn btn-secondary">W Y L O S U J</button>
+        </div>
+
+        <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+            <div class="card-body">
+              <h4 id="number" class="card-title">Wylosowana liczba</h4>     
             </div>
         </div>
 
-        <h6></h6>
-
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="images/catte.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Unikalny starszy myśliwy</h5>
-                <p class="card-text">Jest to facet w podeszłym wieku, nie obchodzi go zdanie innych. Ma za sobą już
-                    spore doświadczenie, pomimo tego nadal wykazuje się świetną aktywnością. Czasami się wygłupia i
-                    krzyczy. Lubi klimat jaki daje mu wieś oraz wszystko co jest z nią związane.</p>
-            </div>
-        </div>
-
-        <h6></h6>
+        <br/>
 
         <div class="card border-secondary mb-3" style="max-width: 20rem;">
             <div class="card-header">Ciekawostka</div>
             <div class="card-body">
                 <h4 class="card-title">Cookies 🍪</h4>
                 <p class="card-text">Strona nie korzysta z plików cookies, proszę uszanować moją decyzję -
-                    dziękujemy... 🤧</p>
+                    dziękuje... 🤧</p>
             </div>
         </div>
 
@@ -78,23 +77,31 @@
             <div class="card-body">
                 <h4 class="card-title">Reklamy 📮</h4>
                 <p class="card-text">Na stronie nie są wyświetlane reklamy, proszę uszanować moją decyzję -
-                    dziękujemy... 😑
+                    dziękuje... 😑
                 </p>
             </div>
         </div>
 
-        <h6></h6>
+        <br/>
 
         <h4>Moje media</h4>
         <div class="d-grid gap-2">
-            <button onclick=" youtube()" type="button" class="btn btn-primary btn-lg">
-                <iclass="bi-youtube"></i>Youtube
-            </button>
+            <button onclick=" youtube()" type="button" class="btn btn-primary btn-lg"><i class="bi-youtube"></i>
+                Youtube</button>
             <button onclick=" discord()" type="button" class="btn btn-primary btn-lg"><i class="bi-discord"></i>
                 Discord</button>
             <button onclick=" github()" type="button" class="btn btn-dark btn-lg"><i class="bi-github"></i>
                 GitHub</button>
             <script>
+                function losuj() {
+                    var of = document.getElementById("inputSmall1").value;
+                    var to = document.getElementById("inputSmall2").value;
+
+                    min = Math.ceil(of);
+                    max = Math.floor(to);
+                    document.getElementById("number").innerHTML = Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+
                 function youtube() {
                     location.href = "https://www.youtube.com/channel/UCMoHVlWVS_C8TpMf-bp0f2g";
                 }
@@ -108,9 +115,6 @@
                 }
             </script>
         </div>
-
-
     </center>
 </body>
-
 </html>
